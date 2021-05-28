@@ -46,5 +46,33 @@ namespace YeniYazlab
         {
             mouseDown = false;
         }
+
+        private void sözlesme_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sözlesme_MouseDown(object sender, MouseEventArgs e)
+        {
+            mouseDown = true;
+            lastLocation = e.Location;
+        }
+
+        private void sözlesme_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mouseDown)
+            {
+                this.Location = new Point(
+                    (this.Location.X - lastLocation.X) + e.X, (this.Location.Y - lastLocation.Y) + e.Y);
+
+                this.Update();
+            }
+        }
+
+        private void sözlesme_MouseUp(object sender, MouseEventArgs e)
+        {
+            mouseDown = false;
+
+        }
     }
 }

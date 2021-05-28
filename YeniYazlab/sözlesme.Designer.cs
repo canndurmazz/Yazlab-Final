@@ -237,6 +237,10 @@ namespace YeniYazlab
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "sözlesme";
             this.Text = "sözlesme";
+            this.Load += new System.EventHandler(this.sözlesme_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.sözlesme_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.sözlesme_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.sözlesme_MouseUp);
             this.ResumeLayout(false);
             this.PerformLayout();
 

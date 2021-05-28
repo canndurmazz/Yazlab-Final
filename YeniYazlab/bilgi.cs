@@ -33,8 +33,8 @@ namespace YeniYazlab
         {
             if (checkBox1.Checked == true)
             {
-                giris giris = new giris();
-                giris.Show();
+                adsoyad adsoyad = new adsoyad();
+                adsoyad.Show();
                 this.Hide();
             }
             else

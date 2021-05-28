@@ -107,6 +107,7 @@ namespace YeniYazlab
         {
            
         }
+   
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -116,6 +117,28 @@ namespace YeniYazlab
         private void soyadtext_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            mouseDown = true;
+            lastLocation = e.Location;
+        }
+
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mouseDown)
+            {
+                this.Location = new Point(
+                    (this.Location.X - lastLocation.X) + e.X, (this.Location.Y - lastLocation.Y) + e.Y);
+
+                this.Update();
+            }
+        }
+
+        private void panel1_MouseUp(object sender, MouseEventArgs e)
+        {
+            mouseDown = false;
         }
     }
 }
